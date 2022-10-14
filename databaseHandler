@@ -8,16 +8,11 @@ public class DBHandler {
 		try
 		{
 		Class.forName("org.postgresql.Driver");
-		 connection=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Package_Details","postgres","anirudh123");
-		
-		
-		
-		}catch(Exception e)
-		{
+		connection=DriverManager.getConnection("jdbc:postgresql://localhost:5432/Package_Details","postgres","nav@pwd1");
+		}
+		catch(Exception e){
 			System.out.println(e.getMessage());
 		}
-		
 		return connection;
 	}
-
 }
