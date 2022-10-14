@@ -1,32 +1,40 @@
 package gitHub;
 
-public class VarshTourPackage {
-	public String package_id;
+public class VarshaTourPackage {
+	public String pkg_id;
 	public String source_place;
 	public String destination_place;
-	public int no_of_days;
+	public int days_count;
 	double basic_fare;
-	public double package_cost;
-	public VarshTourPackage(String package_id, String source_place, String destination_place, int no_of_days,
+	public double pkg_cost;
+	public VarshaTourPackage(String pkg_id, String source_place, String destination_place, int days_count,
 			double basic_fare) {
 		super();
-		this.package_id = package_id;
+		this.pkg_id = pkg_id;
 		this.source_place = source_place;
 		this.destination_place = destination_place;
-		this.no_of_days = no_of_days;
+		this.days_count = days_count;
 		this.basic_fare = basic_fare;
 	}
 	
 public void calculatePacakgeCost() {
-	if(this.no_of_days<=5) {this.package_cost= this.basic_fare*this.no_of_days;
-	return;}
-	if(this.no_of_days>5 && this.no_of_days<=8) {this.package_cost= this.basic_fare*this.no_of_days*0.97;
-	return;}
-	if(this.no_of_days>8 && this.no_of_days<=10) {this.package_cost= this.basic_fare*this.no_of_days*0.95;
-	return;}
-	if(this.no_of_days>5) {this.package_cost= this.basic_fare*this.no_of_days*0.93;
-	return;}
+	if(this.days_count<=5) {
+		this.pkg_cost= this.basic_fare*this.days_count;
+		return;
+	}
+	if(days_count>5 && this.days_count<=8) {
+		this.pkg_cost= this.basic_fare*this.days_count*0.97;
+		return;
+	}
+	if(this.days_count>8 && this.days_count<=10) {
+		this.pkg_cost= this.basic_fare*this.days_count*0.95;
+		return;
+	}
+	if(this.days_count>5) {
+		this.pkg_cost= this.basic_fare*this.days_count*0.93;
+		return;
+	}
 	
-	this.package_cost*=1.12;
+	this.pkg_cost*=1.12;
 }
 }
