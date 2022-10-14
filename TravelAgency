@@ -8,14 +8,14 @@ import java.sql.*;
 import java.sql.Statement;
 class InvalidIdException extends Exception {
 	InvalidIdException() {
-		super("Invalid Id passed");
+		super("Given Invalid Id");
 	}
 }
 
 public class TravelAgency {
 
-	public List<VarshTourPackage> generatePackageCost() throws InvalidIdException, SQLException {
-		List<VarshTourPackage> list = new ArrayList();
+	public List<VarshaTourPackage> generatePackageCost() throws InvalidIdException, SQLException {
+		List<VarshaTourPackage> list = new ArrayList();
 		int i = 1;
 		Scanner sc = null;
 		try {
@@ -26,13 +26,13 @@ public class TravelAgency {
 				
 				PreparedStatement prs=cnn.prepareStatement("select * from Package_Details where pk_id=?");
 				
-			File file = new File("B://Package.txt");
+			File file = new File("c://Package.txt");
 			sc = new Scanner(file);
 			while (sc.hasNextLine()) {
 
-				String st = sc.nextLine();
-				st = st.trim();
-				String arr[] = st.split(",");
+				String s = sc.nextLine();
+				s = s.trim();
+				String arr[] = s.split(",");
 
 				String id = arr[0].trim();
 				if (validate(id)) {
@@ -59,7 +59,7 @@ public class TravelAgency {
 			}
 
 		} catch (FileNotFoundException ex) {
-			System.out.println("Problem in line number - " + i);
+			System.out.println("Problem in line number :" + i);
 			System.out.println(ex.getMessage());
 		} 
 
